@@ -160,10 +160,10 @@ editItem (item) {
 deleteItem (item) {
     const index = this.desserts.indexOf(item)
     let data = this.desserts.splice(index, 1)
-    window.axios.put(`https://jsonplaceholder.typicode.com/users/${data[0].id}`).then((res) =>{
+    window.axios.delete(`https://jsonplaceholder.typicode.com/users/${data[0].id}`).then(() =>{
         window.Swal.fire({
             title:'Success',
-            text:'Data created Successfully Deleted on ID: '+res.data.id,
+            text:'Data created Successfully Deleted on ID: '+data[0].id,
             icon:'success',
             showConfirmButton:false,
             allowEscapeKey:false,
